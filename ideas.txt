@@ -17,5 +17,13 @@ can make text more readable?
 Hit enter to search
     -give prompt after 2 secs of no writing if text area has text
 
+buttons push
+    -make slightly smaller when hovering over them, for depth effect
 
-Fix hovering for buttons
+
+darkmode
+    windows on the house, new image icon
+
+
+
+tolowercase for all searches

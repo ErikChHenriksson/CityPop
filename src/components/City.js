@@ -1,11 +1,12 @@
 import { React, Component } from "react";
+import { Link } from "react-router-dom";
 
 class City extends Component {
   render() {
     return (
-        <div className={`city button center`}>
-            {this.props.name}
-        </div>
+      <Link to={`/city/${this.props.name}`} className={`city button center`}>
+        {this.props.name}
+      </Link>
     );
   }
 }
