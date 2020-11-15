@@ -1,0 +1,21 @@
+1 city fetch
+2 country fetch
+    -get list most populous
+    -pick 3
+    -sort by population
+
+
+
+buttons expand to become search fields
+    expand button width while decreasing width of other button
+    fadeout other button
+
+
+can make text more readable?
+
+
+Hit enter to search
+    -give prompt after 2 secs of no writing if text area has text
+
+
+Fix hovering for buttons
