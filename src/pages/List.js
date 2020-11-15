@@ -13,11 +13,11 @@ class List extends Component {
   }
   componentDidMount() {
     const countryName = this.props.match.params.name;
-    const countryString =
-      this.state.countrycodes[countryName] == undefined
-        ? ""
-        : `&country=${this.state.countrycodes[countryName].code}`;
-    console.log(countryString);
+    let countryString = "";
+    if (this.state.countrycodes[countryName] !== undefined) {
+      countryString = `&country=${this.state.countrycodes[countryName].code}`;
+      this.setState({ countrycodeChecked: true });
+    }
     fetch(
       `http://api.geonames.org/search?q=${countryName}&maxRows=1000&style=MEDIUM${countryString}&type=json&orderby=population&lang=en&username=weknowit`
     ).then((response) =>
@@ -34,7 +34,6 @@ class List extends Component {
             this.setState((prevState) => ({
               cities: [...prevState.cities, { name: data.geonames[i].name }],
             }));
-            console.log(`Found a city called ${data.geonames[i].name}`);
             citiesFound++;
           }
         }

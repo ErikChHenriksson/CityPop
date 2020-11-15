@@ -1,22 +1,3 @@
-1 city fetch
-2 country fetch
-    -get list most populous
-    -pick 3
-    -sort by population
-
-
-
-buttons expand to become search fields
-    expand button width while decreasing width of other button
-    fadeout other button
-
-
-can make text more readable?
-
-
-Hit enter to search
-    -give prompt after 2 secs of no writing if text area has text
-
 buttons push
     -make slightly smaller when hovering over them, for depth effect
 
@@ -26,4 +7,15 @@ darkmode
 
 
 
-tolowercase for all searches
+Documentation
+
+
+Navigation
+    -click logo to get to root
+    -some back button?
+
+buttons expand to become search fields
+    expand button width while decreasing width of other button
+    fadeout other button
+
+can make text more readable?
