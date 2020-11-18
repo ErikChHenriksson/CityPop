@@ -1,29 +1,20 @@
 .App {
   text-align: center;
-  background-color: #ffffff;
   min-height: 100vh;
-  font-family: 'Times New Roman', Times, serif;
-  color: #000;
-  text-decoration: none;
-  -webkit-text-fill-color: white;
-  -webkit-text-stroke-width: 0.8px;
-  -webkit-text-stroke-color: black;
+  font-family: "Times New Roman", Times, serif;
 }
 :any-link {
   text-decoration: none;
-  color: unset  ;
-}
-.hollow-text {
-  color: #000;
-  text-decoration: none;
-  -webkit-text-fill-color: white;
-  -webkit-text-stroke-width: 0.8px;
-  -webkit-text-stroke-color: black;
+  color: unset;
 }
 
-.center{
+.center {
   display: grid;
   place-items: center;
+}
+
+.hidden {
+  display: none;
 }
 
 .App-logo {
@@ -40,9 +31,58 @@
 
 .App-header {
   font-size: calc(10px + 2vmin);
-  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
+.darkmode-button {
+  align-self: flex-start;
+  margin-top: 6vh;
+  position: absolute;
+  margin-left: 250px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 15px;
+}
+
+.darkmode-img {
+  height: 5vh;
+  margin-right: 1vw;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.light-text {
+  color: #000;
+  text-decoration: none;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-color: black;
+  transition: all 0.1s linear;
+}
+.dark-text {
+  color: #1b1721;
+  text-decoration: none;
+  -webkit-text-fill-color: black;
+  -webkit-text-stroke-width: 0.6px;
+  -webkit-text-stroke-color: #7fd2cd;
+  transition: all 0.1s linear;
+  border-color: #7fd2cd !important;
+}
+.dark-input {
+  background: #1b1721;
+  caret-color: #c0e8e8;
+  transition: all 0.5s linear;
+}
+.light-input {
+  transition: all 0.5s linear;
+  background: white;
+}
 .s-options {
   margin-top: 5vh;
   width: 100vw;
@@ -59,22 +99,18 @@
   height: 10vh;
   text-transform: uppercase;
   font-weight: bold;
-  color: #000;
-  text-decoration: none;
-  -webkit-text-fill-color: white;
-  -webkit-text-stroke-width: 0.8px;
-  -webkit-text-stroke-color: black;
+}
+.s-button:hover {
+  font-size: 24.8px;
+  height: 9.8vh;
+  margin: 2.1vh 2vw;
+  box-shadow: #000 2px 2px;
 }
 
 .button {
   margin: 2vh 2vw;
   cursor: pointer;
   box-shadow: #000 5px 5px;
-  color: #000;
-  text-decoration: none;
-  -webkit-text-fill-color: white;
-  -webkit-text-stroke-width: 0.8px;
-  -webkit-text-stroke-color: black;
 }
 .button:hover {
   margin: calc(2vh + 3px) 2vw calc(2vh-3px) 2vw;
@@ -94,7 +130,6 @@
   text-transform: uppercase;
 }
 
-
 .s-input {
   max-width: 90vw;
   width: 600px;
@@ -108,7 +143,18 @@
   border-radius: 50%;
   height: 50px;
   width: 50px;
+  margin: 2vh 2vw;
+  cursor: pointer;
+  box-shadow: #000 5px 5px;
 }
+
+.s-button-small:hover {
+  height: 48px;
+  width: 48px;
+  margin: calc(2vh + 2px) 2vw calc(2vh) 2vw;
+  box-shadow: #000 2px 2px;
+}
+
 .pop-area {
   width: 600px;
   max-width: 90vw;
@@ -135,6 +181,83 @@
   max-width: 90vw;
   font-size: 30px;
   text-transform: capitalize;
+  box-shadow: #000 5px 5px;
+}
+.city:hover {
+  font-size: 29px;
+  height: 4.8vh;
+  width: 396px;
+  margin: 1.1vh 2px;
+  box-shadow: #000 3px 3px;
+}
+
+.l-bar {
+  height: 4.8vh;
+  width: 396px;
+  border: 2px #000 solid;
+  margin: 1.1vh 2px;
+  max-width: 90vw;
+  font-size: 30px;
+}
+
+.l-text {
+  z-index: 5;
+  color: #000;
+  position: relative;
+  bottom: 4.5vh;
+}
+
+.anim {
+  width: 100%;
+}
+
+.l-bar { 
+  height: 4.8vh;
+  width: 396px;
+	position: relative;
+  border: 2px #000 solid;
+  margin: 1.1vh 2px;
+	box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+
+.l-bar > span {
+  display: block;
+  height: 100%;
+  background-color: rgba(248, 248, 248, 0.638);
+  box-shadow: 
+    inset 0 2px 7px  rgba(255, 255, 255),
+    inset 0 -2px 4px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.l-bar > span:after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background-image: linear-gradient(
+    -45deg, 
+    rgb(0, 0, 0) 25%, 
+    transparent 25%, 
+    transparent 50%, 
+    rgb(0, 0, 0) 50%, 
+    rgb(0, 0, 0) 75%, 
+    transparent 75%, 
+    transparent
+  );
+  z-index: 1;
+  background-size: 100px 100px;
+  animation: move 2s linear infinite;
+  overflow: hidden;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
 }
 
 /* 

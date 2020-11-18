@@ -9,6 +9,8 @@ class List extends Component {
       cities: [],
       countrycodes: countrycodes,
       countrycodeChecked: false,
+      noResults: false,
+      errorMessage: "",
     };
   }
   componentDidMount() {
@@ -37,17 +39,42 @@ class List extends Component {
             citiesFound++;
           }
         }
+        if (citiesFound === 0) {
+          this.setState({ noResults: true });
+          this.setState({ errorMessage: "No Results Found" });
+        }
+        this.setState({ finishedSearching: true });
       })
     );
   }
+  getHeaderStyling = () => {
+    return this.props.theme === "light" ? "s-h1 light-text" : "s-h1 dark-text";
+  };
+  getLoadingStyle() {
+    if (this.state.noResults || this.state.finishedSearching) return "hidden";
+    let classes = "l-bar animate ";
+    classes += this.props.theme === "light" ? "light-text" : "dark-text";
+    return classes;
+  }
+  getErrorStyling = () => {
+    if (this.state.noResults)
+      return this.props.theme === "light" ? "light-text error" : "dark-text error";
+  };
   render() {
     return (
       <div className="s-area">
-        <div className="s-h1">{this.props.match.params.name}</div>
+        <div className={this.getHeaderStyling()}>
+          {this.props.match.params.name}
+        </div>
         <div className="list-area">
           {this.state.cities.map((city, key) => (
-            <City name={city.name} key={key} />
+            <City name={city.name} key={key} theme={this.props.theme} />
           ))}
+          <div className={this.getLoadingStyle()}>
+            <span className="anim"></span>
+            <div className="l-text">Loading...</div>
+          </div>
+          <div className={this.getErrorStyling()}>{this.state.errorMessage}</div>
         </div>
       </div>
     );

@@ -1,21 +1,18 @@
-buttons push
-    -make slightly smaller when hovering over them, for depth effect
-
-
-darkmode
-    windows on the house, new image icon
-
-
+Fix List
+    -loader
+    -response for error or not found
 
 Documentation
-
-
-Navigation
-    -click logo to get to root
-    -some back button?
 
 buttons expand to become search fields
     expand button width while decreasing width of other button
     fadeout other button
 
-can make text more readable?
+
+
+Fix navigation
+
+
+
+
+make not move smoothly in position, only other styles, transitions for all
