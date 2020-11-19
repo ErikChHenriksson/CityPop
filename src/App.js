@@ -1,6 +1,6 @@
 import "./App.css";
 import { React, Component } from "react";
-import { BrowserRouter as Router, Route, useHistory } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Landing from "./pages/Landing.js";
 import Search from "./pages/Search.js";
 import Population from "./pages/Population.js";
@@ -38,7 +38,7 @@ class App extends Component {
           <Router>
             <div className="App">
               <header className="App-header">
-                <div className="clickable" onClick={this.goHome}>
+                <Link to="/" className="clickable">
                   <img
                     src={
                       this.state.theme === "light"
@@ -48,7 +48,7 @@ class App extends Component {
                     className="App-logo"
                     alt="logo"
                   />
-                </div>
+                </Link>
                 <div onClick={this.themeToggler} className="darkmode-button clickable">
                   <img src={this.state.theme === "light" ? day : night} className="darkmode-img"></img>
                   Switch Theme

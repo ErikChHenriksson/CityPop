@@ -13,23 +13,26 @@ class Search extends Component {
     this.updateSearchword = this.updateSearchword.bind(this);
   }
   handleEnter = (e) => {
-    console.log(e.charCode);
     if (e.charCode === 13) this.setState({ redirect: true });
   };
   updateSearchword(event) {
     this.setState({ searchWord: event.target.value.toLowerCase() });
   }
   getHeaderStyling = () => {
-    return (this.props.theme === 'light') ? 's-h1 light-text' : 's-h1 dark-text';
-  }
+    return this.props.theme === "light" ? "s-h1 light-text" : "s-h1 dark-text";
+  };
   getInputStyling = () => {
-    return (this.props.theme === 'light') ? 's-input light-text light-input' : 's-input dark-text dark-input';
-  }
+    return this.props.theme === "light"
+      ? "s-input light-text light-input"
+      : "s-input dark-text dark-input";
+  };
   getSearchLogo() {
-    return (this.props.theme === 'light') ? search_logo : search_logo_dark;
+    return this.props.theme === "light" ? search_logo : search_logo_dark;
   }
   getSearchButtonStyling() {
-    return (this.props.theme === 'light') ? 's-button-small center light-text' : 's-button-small center dark-text';
+    return this.props.theme === "light"
+      ? "s-button-small center light-text"
+      : "s-button-small center dark-text";
   }
   render() {
     if (this.state.redirect) {
@@ -42,8 +45,11 @@ class Search extends Component {
     }
     return (
       <div className="s-area">
-        <div className={this.getHeaderStyling()}>{"search by " + this.props.searchby}</div>
+        <div className={this.getHeaderStyling()}>
+          {"search by " + this.props.searchby}
+        </div>
         <input
+          autoFocus
           type="text"
           className={this.getInputStyling()}
           placeholder={`Enter a ${this.props.searchby}`}
