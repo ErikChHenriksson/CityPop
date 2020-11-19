@@ -22,6 +22,8 @@ font-family: times-new-roman;
 Try out the application for yourself by following this link: 
 [Try me](https://city-pop.netlify.app)
 
+Click the logo to return to the first screen and click the sun or moon above the buildings to toggle dark mode.
+
 <h2 style="
 font-family: times-new-roman;
   font-size: 30px;">Environment Setup</h2>
