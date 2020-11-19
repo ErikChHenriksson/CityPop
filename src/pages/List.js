@@ -25,7 +25,7 @@ class List extends Component {
       this.setState({ countrycodeChecked: true });
     }
     fetch(
-      `http://api.geonames.org/search?q=${countryName}&maxRows=1000&style=MEDIUM${countryString}&type=json&orderby=population&lang=en&username=weknowit`
+      `https://secure.geonames.org/search?q=${countryName}&maxRows=1000&style=MEDIUM${countryString}&type=json&orderby=population&lang=en&username=weknowit`
     ).then((response) =>
       response.json().then((data) => {
         console.log(data);

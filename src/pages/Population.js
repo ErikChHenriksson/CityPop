@@ -22,7 +22,7 @@ class Population extends Component {
       }, 0),
     });
     fetch(
-      `http://api.geonames.org/search?q=${cityName}&name_equals=${cityName}&maxRows=10&style=LONG&type=json&orderby=population&isNameRequired=true&lang=en&username=weknowit`
+      `https://secure.geonames.org/search?q=${cityName}&name_equals=${cityName}&maxRows=10&style=LONG&type=json&orderby=population&isNameRequired=true&lang=en&username=weknowit`
     ).then((response) => {
       console.log(response);
       if (response.status !== 200) {
