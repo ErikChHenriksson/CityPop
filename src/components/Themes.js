@@ -1,5 +1,3 @@
-import { withTheme } from "styled-components"
-
 export const lightTheme = {
     body: '#FFF',
     text: '#363537',

@@ -60,7 +60,7 @@ class Search extends Component {
           to={`/${this.props.searchby}/${this.state.searchWord}`}
           className={this.getSearchButtonStyling()}
         >
-          <img src={this.getSearchLogo()} />
+          <img alt="" src={this.getSearchLogo()} />
         </Link>
       </div>
     );

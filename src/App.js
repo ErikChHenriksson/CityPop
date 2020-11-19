@@ -50,7 +50,7 @@ class App extends Component {
                   />
                 </Link>
                 <div onClick={this.themeToggler} className="darkmode-button clickable">
-                  <img src={this.state.theme === "light" ? day : night} className="darkmode-img"></img>
+                  <img alt="" src={this.state.theme === "light" ? day : night} className="darkmode-img"></img>
                   Switch Theme
                 </div>
               </header>
